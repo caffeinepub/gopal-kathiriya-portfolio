@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300;12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+    /* Light mode - used for light sections */
+    --background: 1 0 0;
+    --foreground: 0.15 0.01 240;
+    --card: 0.97 0 0;
+    --card-foreground: 0.15 0.01 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.15 0.01 240;
+    --primary: 0.72 0.19 145;
+    --primary-foreground: 0.99 0 0;
+    --secondary: 0.94 0.004 220;
+    --secondary-foreground: 0.15 0.01 240;
+    --muted: 0.96 0 0;
+    --muted-foreground: 0.55 0.01 220;
+    --accent: 0.72 0.19 145;
+    --accent-foreground: 0.99 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+    --border: 0.9 0.005 220;
+    --input: 0.9 0.005 220;
+    --ring: 0.72 0.19 145;
+    --chart-1: 0.72 0.19 145;
+    --chart-2: 0.6 0.118 184.704;
+    --chart-3: 0.398 0.07 227.392;
+    --chart-4: 0.828 0.189 84.429;
+    --chart-5: 0.769 0.188 70.08;
+    --sidebar: 0.985 0 0;
+    --sidebar-foreground: 0.145 0 0;
+    --sidebar-primary: 0.72 0.19 145;
+    --sidebar-primary-foreground: 0.985 0 0;
+    --sidebar-accent: 0.97 0 0;
+    --sidebar-accent-foreground: 0.205 0 0;
+    --sidebar-border: 0.922 0 0;
+    --sidebar-ring: 0.708 0 0;
+
+    /* Custom dark section tokens */
+    --dark-bg: oklch(0.13 0.005 220);
+    --dark-card: oklch(0.18 0.005 220);
+    --dark-card-inner: oklch(0.2 0.006 220);
+    --dark-border: oklch(0.23 0.008 220);
+    --dark-text: oklch(0.94 0.004 220);
+    --dark-muted: oklch(0.65 0.015 220);
+    --brand-green: oklch(0.72 0.19 145);
+    --brand-green-dim: oklch(0.6 0.16 145);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer utilities {
+  .section-dark {
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+  }
+
+  .section-dark-alt {
+    background-color: oklch(0.16 0.005 220);
+    color: var(--dark-text);
+  }
+
+  .card-dark {
+    background-color: var(--dark-card);
+    border: 1px solid var(--dark-border);
+    border-radius: 0.75rem;
+  }
+
+  .text-brand-green {
+    color: var(--brand-green);
+  }
+
+  .bg-brand-green {
+    background-color: var(--brand-green);
+  }
+
+  .border-brand-green {
+    border-color: var(--brand-green);
+  }
+
+  .hover-lift {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px oklch(0.72 0.19 145 / 0.15);
+  }
+
+  .tech-grid {
+    background-image: linear-gradient(
+        oklch(0.23 0.008 220 / 0.4) 1px,
+        transparent 1px
+      ),
+      linear-gradient(90deg, oklch(0.23 0.008 220 / 0.4) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .text-dark-muted {
+    color: var(--dark-muted);
+  }
+
+  .gradient-green-text {
+    background: linear-gradient(135deg, var(--brand-green), oklch(0.85 0.2 145));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
