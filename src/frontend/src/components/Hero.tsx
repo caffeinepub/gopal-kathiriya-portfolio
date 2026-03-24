@@ -131,7 +131,7 @@ export default function Hero() {
                 style={{ background: "var(--dark-card)" }}
               >
                 <img
-                  src="/assets/uploads/8w5a3382.jpg-019d1fa0-0788-738d-b306-7146be6be96f-1.jpeg"
+                  src="/assets/generated/gopal-profile-upright.jpeg"
                   alt="Gopal Kathiriya"
                   className="w-full h-full object-cover object-top"
                 />
